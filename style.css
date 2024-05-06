@@ -11,12 +11,12 @@
 :root {
     --bg-color: #000000;
     --second-bg-color: #131313;
-    --text-color: rgb(220, 240, 253);
+    --text-color: #ffffff;
     --main-color: #005eff;
 }
 html {
     font-size: 60%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 body {
     background: var(--bg-color);
@@ -46,8 +46,7 @@ body {
     transform: scale(1.1);
 }
 .logo span {
-    color: var(--main-color);
-    text-shadow: 0 0 30px var(--main-color);
+    text-shadow: 0 0 25px var(--main-color);
 }
 .navbar a {
     font-size: 1.8rem;
@@ -55,6 +54,7 @@ body {
     margin-left: 4rem;
     font-weight: 500;
     transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
 }
 .navbar a:hover,
 .navbar a.active {
@@ -62,7 +62,7 @@ body {
     border-bottom: 3px solid var(--main-color);
 }
 #menu-icon {
-    font-size: 3,6rem;
+    font-size: 3.6rem;
     color: var(--main-color);
     display: none;
 }
@@ -122,7 +122,7 @@ span {
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 1.8rem;
-    max-width: 100px;  
+    max-width: 62.5rem;  
 }
 .social-icons a {
     display: inline-flex;
@@ -200,4 +200,92 @@ span {
     border-left: 3px solid var(--bg-color);
     right: -8px;
     animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}
+@keyframes cursor {
+    to{
+        border-left: 2px solid var(--main-color);
+    }
+}
+@keyframes words{
+    0%,
+    20%{
+        content: "Frontend Designer";
+    }
+    21%,
+    40%{
+        content: "Web Designer";
+    }
+    41%,
+    60%{
+        content: "UI / UX Designer";
+    }
+    61%,
+    80%{
+        content: "Web Developer";
+    }
+    81%,
+    100%{
+        content: "Software Tester";
+    }
+}
+@keyframes typing{
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 8px);
+    }
+}
+.heading{
+    font-size: 8rem;
+    text-align: center;
+    margin: 5rem 0;
+}
+.education{
+    padding: 100px 15px;
+    background: var(--second-bg-color);
+}
+.education h2{
+    margin-bottom: 5rem;
+}
+timeline-items{
+    max-width: 75rem;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+timeline-items::before{
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background-color: var(--main-color);
+    left: calc(50% - 1px);
+}
+.timeline-item{
+    margin-bottom: 40px;
+    width: 100%;
+    position: relative;
+}
+.timeline-item:last-child{
+    margin-bottom: 0;
+}
+.timeline-item:nth-child(odd){
+    padding-right: calc(50% + 30px);
+    text-align: right;
+}
+.timeline-item:nth-child(even){
+    padding-right: calc(50% + 30px);
+}
+.timeline-dot{
+    height: 21px;
+    width: 21px;
+    background-color: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color);
+    position: absolute;
+    left: calc(50% - 8px);
+    border-radius: 50%;
+    top: 10px;
 }
